@@ -1,0 +1,27 @@
+
+const temperatures1 = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
+const temperatures2 = [4, 2, 18, -43];
+
+const tempAmplitute = function (t1, t2) {
+  let temps = t1.concat(t2);
+
+  let max = 0;
+  let min = 0;
+
+  for (let i = 0; i < temps.length; i++) {
+    //    test max
+
+    if (max < temps[i]) max = temps[i];
+    if (min > temps[i]) min = temps[i];
+    if (temps[i] !== Number) continue;
+    console.log(max, min);                        //this doesn't log anything to the console here but if I move it above line 16 it does.
+  }
+
+  return max - min;
+};
+console.log(
+  `Today's temperature amplitude is: ${tempAmplitute(
+    temperatures1,
+    temperatures2
+  )}.`
+);
